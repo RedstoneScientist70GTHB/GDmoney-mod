@@ -1,16 +1,15 @@
 name: Build Geode Mod
 
-# Runs automatically on every push, and can also be triggered manually
-# from the "Actions" tab on GitHub with the "Run workflow" button.
 on:
   push:
   workflow_dispatch:
 
 jobs:
   build:
-    # Geode mods for Windows/Android are built on Windows; this matches
-    # the standard Geode CI setup.
     runs-on: windows-latest
+
+    env:
+      CMAKE_POLICY_VERSION_MINIMUM: "3.5"
 
     steps:
       - name: Check out repository
