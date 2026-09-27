@@ -18,6 +18,7 @@ jobs:
       - name: Build Geode mod
         uses: geode-sdk/build-geode-mod@main
         with:
+          sdk: nightly
           combine: true
 
       - name: Upload built .geode file
