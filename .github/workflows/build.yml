@@ -1,0 +1,28 @@
+name: Build Geode Mod
+
+# Runs automatically on every push, and can also be triggered manually
+# from the "Actions" tab on GitHub with the "Run workflow" button.
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Geode mods for Windows/Android are built on Windows; this matches
+    # the standard Geode CI setup.
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build Geode mod
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          combine: true
+
+      - name: Upload built .geode file
+        uses: actions/upload-artifact@v4
+        with:
+          name: MoneyMod
+          path: build/*.geode
