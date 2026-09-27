@@ -1,0 +1,37 @@
+{
+    "geode": "3.0.0",
+    "gd": {
+        "win": "2.206",
+        "android": "2.206",
+        "mac": "2.206"
+    },
+    "id": "com.yourname.moneymod",
+    "name": "Money Mod",
+    "version": "v1.0.0",
+    "developer": "YourName",
+    "description": "Adds a price to every editor object. Start with a budget, spend it as you build, and get locked out of placing once you're broke.",
+    "settings": {
+        "starting-money": {
+            "type": "int",
+            "default": 1000,
+            "min": 0,
+            "max": 1000000,
+            "name": "Starting Money",
+            "description": "How much money you start with each time you open the editor"
+        },
+        "default-object-price": {
+            "type": "int",
+            "default": 1,
+            "min": 0,
+            "max": 10000,
+            "name": "Default Object Price",
+            "description": "Price charged for any object that isn't in the custom price list"
+        },
+        "persist-money": {
+            "type": "bool",
+            "default": false,
+            "name": "Persist Money Between Sessions",
+            "description": "If on, money carries over between editor sessions instead of resetting to Starting Money each time"
+        }
+    }
+}
